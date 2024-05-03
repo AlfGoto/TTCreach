@@ -1,15 +1,9 @@
-import Image from "next/image";
+import Form from './form.js'
 
-export default function Home() {
-  return (
-    <>
-    <Form />
-    </>
-  );
-}
+export default function Page() {
 
-function Form(){
-    return(
-        <p>Form</p>
+
+    return (
+        <Form  />
     )
 }
