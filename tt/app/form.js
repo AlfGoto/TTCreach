@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
+import { cn } from "@/lib/utils"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,14 +10,18 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrig
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-
+import { Slider } from "@/components/ui/slider"
 
 function FormElement() {
     const [title, setTitle] = useState('');
     const [number, setNumber] = useState('');
     const [gender, setGender] = useState('');
+    const [genderClass, setGenderClass] = useState('hidden');
     const [city, setCity] = useState('');
     const [area, setArea] = useState('');
+    const [happy, setHappy] = useState('');
+    const [mail, setMail] = useState('');
+
 
     const [send, setSend] = useState('Send !')
 
@@ -31,11 +36,13 @@ function FormElement() {
         const { data, error } = await supabase
             .from('posts')
             .insert([{
-                text: title,
-                number: number,
+                name: title,
+                age: number,
                 gender: gender,
                 city: city,
                 bio: area,
+                happy: happy,
+                email: mail,
             }])
             .select()
 
@@ -50,12 +57,17 @@ function FormElement() {
                     setCity(document.querySelector('button span').textContent)
                 }
             }
+            if (document.querySelector('span span span.block') != null) {
+                setHappy(document.querySelector('span span span.block').getAttribute('aria-valuenow'))
+                // console.log('set')
+            }
         }, 1000)
     }, [])
 
     return (
-        <form onSubmit={post} className="gap-[1svw] flex flex-col">
-            <h2>Who are you</h2>
+        <form onSubmit={post} className="gap-[1svw] flex flex-col w-4/5">
+
+
             <Label htmlFor='name'>Name</Label>
             <Input
                 id='name'
@@ -65,6 +77,7 @@ function FormElement() {
                 onChange={(e) => setTitle(e.target.value)}
                 required
             />
+
 
             <Label htmlFor='age'>Age</Label>
             <Input
@@ -76,6 +89,17 @@ function FormElement() {
                 required
             />
 
+            <Label htmlFor='mail'>Email</Label>
+            <Input
+                id='mail'
+                type="email"
+                placeholder="Write your mail here..."
+                value={mail}
+                onChange={(e) => setMail(e.target.value)}
+            />
+
+
+
             <Label>Gender</Label>
             <fieldset className="border-[lightgray] border-solid border-[.1svw] rounded-[1svw] flex flex-col p-[1svw] items-center">
                 <legend className="justify-self-center">What is your gender ? </legend>
@@ -86,7 +110,10 @@ function FormElement() {
                         type="radio"
                         name="radio"
                         value="man"
-                        onChange={(e) => setGender(e.target.value)}
+                        onChange={(e) => {
+                            setGender(e.target.value)
+                            setGenderClass('hidden')
+                        }}
                     />
                     <Label htmlFor="man">Man</Label>
                 </div>
@@ -97,7 +124,10 @@ function FormElement() {
                         type="radio"
                         name="radio"
                         value="woman"
-                        onChange={(e) => setGender(e.target.value)}
+                        onChange={(e) => {
+                            setGender(e.target.value)
+                            setGenderClass('hidden')
+                        }}
                     />
                     <label htmlFor="woman">Woman</label>
                 </div>
@@ -108,9 +138,22 @@ function FormElement() {
                         type="radio"
                         name="radio"
                         value="other"
-                        onChange={(e) => setGender(e.target.value)}
+                        onChange={(e) => {
+                            setGender('')
+                            setGenderClass('block')
+                        }}
                     />
                     <label htmlFor="other">Other</label>
+                </div>
+
+                <div className={genderClass}>
+                    <Input
+                        id='gender'
+                        type="text"
+                        placeholder="So... What is your gender ?"
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                    />
                 </div>
             </fieldset>
 
@@ -130,6 +173,7 @@ function FormElement() {
                 </SelectContent>
             </Select>
 
+
             <Label htmlFor="bio">Bio</Label>
             <Textarea
                 id='bio'
@@ -138,6 +182,19 @@ function FormElement() {
                 onChange={e => setArea(e.target.value)}
                 required
             />
+
+
+            <Label htmlFor='happyness'>Happyness (Sad ←→ Happy)</Label>
+            <Slider
+                name='happy'
+                id='happyness'
+                defaultValue={[50]}
+                max={100}
+                step={1}
+                className="w-full"
+            />
+
+
 
 
             <Button type="submit">{send}</Button>

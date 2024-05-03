@@ -12,6 +12,10 @@ npx shadcn-ui@latest add select
 npx shadcn-ui@latest add form 
 npx shadcn-ui@latest add textarea
 npx shadcn-ui@latest add label
+npx shadcn-ui@latest add slider
 ```
 
 
+## Editor
+
+The editor is accessible in the /e path
