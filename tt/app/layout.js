@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className + " flex w-[100svw]"}>
         <div className="w-[30svw] border-r-[lightgray] border-r" id="leftDiv"></div>
 
-        <div className="w-[40svw] p-[1svw]" id="middleDiv">{children}</div>
+        <div className="w-[60svw] p-[1svw]" id="middleDiv">{children}</div>
 
         <div className="w-[30svw] h-[100svh]  border-l-[lightgray] border-l" id="rightDiv"></div>
         </body>

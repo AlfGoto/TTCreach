@@ -1,9 +1,9 @@
-import Form from './form.js'
+import FormElement from './form.js'
 
 export default function Page() {
 
 
     return (
-        <Form  />
+        <FormElement  />
     )
 }
