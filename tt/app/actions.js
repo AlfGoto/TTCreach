@@ -1,6 +1,12 @@
 'use server'
- 
-export default async function post(txt) {
 
-    console.log(txt)
+import supabase from '../utils/supabase'
+
+export async function getJSON() {
+    let { data: options, error } = await supabase
+        .from('options')
+        .select('json')
+
+
+    return options[0].json
 }
