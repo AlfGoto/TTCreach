@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className + " flex w-[100svw]"}>
-        <div className="w-[30svw] border-r-[lightgray] border-r" id="leftDiv"></div>
+        <div className="hidden md:block w-[30svw] border-r-[lightgray] border-r" id="leftDiv"></div>
 
-        <div className="w-[60svw] p-[1svw]" id="middleDiv">{children}</div>
+        <div className="m-[1svh] w-[100svw] md:w-[60svw] p-[1svw]" id="middleDiv">{children}</div>
 
-        <div className="w-[30svw] h-[100svh]  border-l-[lightgray] border-l" id="rightDiv"></div>
+        <div className="hidden md:block w-[30svw] h-[100svh]  border-l-[lightgray] border-l" id="rightDiv"></div>
         </body>
     </html>
   );
