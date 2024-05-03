@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#tmp{
+    border-right: solid 1px lightgray;
+    border-style: solid;
+}
+
+body{
+    border-right-style: solid;
+    border-right-color: lightgray;
+    border-right-width: 1px;
+}
