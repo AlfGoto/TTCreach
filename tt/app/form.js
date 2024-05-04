@@ -15,7 +15,7 @@ import { Slider } from "@/components/ui/slider"
 function title(arg) {
     if (arg.on) {
         return (<h1 className='text-[4svw]'>{arg.content}</h1>)
-    }else{
+    } else {
         return (<></>)
     }
 }
@@ -33,11 +33,14 @@ function FormElement() {
 
 
     const [send, setSend] = useState('Send !')
-    
+
     const [titleON, setTitleON] = useState('hidden')
     const [titleC, setTitleC] = useState('')
     const [imgON, setImgON] = useState('hidden')
-    
+
+    const [descON, setDescON] = useState('hidden')
+    const [descC, setDescC] = useState('')
+
     const [nameON, setNameON] = useState('hidden')
     const [nameT, setNameT] = useState('')
     const [nameD, setNameD] = useState('')
@@ -75,44 +78,48 @@ function FormElement() {
                 .select('json')
             let j = options[0].json
             console.log(j)
-            if(j.title.on){
+            if (j.desc.on) {
+                setDescON('block')
+                setDescC(j.desc.content)
+            }
+            if (j.title.on) {
                 setTitleON('block')
                 setTitleC(j.title.content)
             }
-            if(j.img){
+            if (j.img) {
                 setImgON('block')
             }
-            if(j.name.on){
+            if (j.name.on) {
                 setNameON('block')
                 setNameT(j.name.title)
                 setNameD(j.name.desc)
             }
-            if(j.age.on){
+            if (j.age.on) {
                 setAgeON('block')
                 setAgeT(j.age.title)
                 setAgeD(j.age.desc)
             }
-            if(j.email.on){
+            if (j.email.on) {
                 setMailON('block')
                 setMailT(j.email.title)
                 setMailD(j.email.desc)
             }
-            if(j.gender.on){
+            if (j.gender.on) {
                 setGenderON('flex')
                 setGenderT(j.gender.title)
                 setGenderD(j.gender.desc)
             }
-            if(j.city.on){
+            if (j.city.on) {
                 setCityON('block')
                 setCityT(j.city.title)
                 setCityD(j.city.desc)
             }
-            if(j.bio.on){
+            if (j.bio.on) {
                 setBioON('block')
                 setBioT(j.bio.title)
                 setBioD(j.bio.desc)
             }
-            if(j.happy.on){
+            if (j.happy.on) {
                 setHappyON('flex')
                 setHappyT(j.happy.title)
                 setHappyD(j.happy.desc)
@@ -163,6 +170,10 @@ function FormElement() {
                 alt="A picture of a man coding"
                 className={'z-[-1]  w-4/5 m-[5%] ' + imgON}
             />
+            <p
+                className={"w-4/5 mb-[2svw] " + descON}>
+                {descC}
+            </p>
             <form onSubmit={post} className="gap-[1svw] flex flex-col w-4/5">
 
 

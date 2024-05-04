@@ -15,6 +15,7 @@ import { EditorGender } from '/components/editorGender'
 import { EditorCity } from '/components/editorCity'
 import { EditorBio } from '/components/editorBio'
 import { EditorHappy } from '/components/editorHappy'
+import { EditorDesc } from '/components/EditorDesc'
 
 
 function FormElement() {
@@ -22,6 +23,9 @@ function FormElement() {
 
     const [titleON, setTitleON] = useState(false)
     const [titleC, setTitleC] = useState('')
+
+    const [descON, setDescON] = useState(false)
+    const [descC, setDescC] = useState('')
 
     const [imgON, setImgON] = useState('')
 
@@ -74,6 +78,10 @@ function FormElement() {
                 "on": titleON,
                 "content": titleC,
             },
+            "desc": {
+                "on": descON,
+                "content": descC
+            },
             "img": imgON,
             "name": {
                 "on": nameON,
@@ -121,7 +129,7 @@ function FormElement() {
     }
 
 
-    //il y a clairement moyen de faire un seul component pour l'Editor et de seulement varier les input. Mettre un input sur le nom et sur les données des options serait une bonne piste. ceci dit je n'ai pas trouvé de moyen efficace de 
+    //c'est clairement possible de ne faire qu'un component editor modulable mais je m'en suis rendu compte trop tard avec le temps qu'il me restait
     return (
         <form onSubmit={post} className="gap-[1svw] flex flex-col w-4/5">
 
@@ -135,6 +143,13 @@ function FormElement() {
             <EditorImg
                 changeOn={imgON => setImgON(imgON)}
                 on={imgON}
+            />
+
+            <EditorDesc
+                changeOn={descON => setDescON(descON)}
+                on={descON}
+                changeC={descC => setDescC(descC)}
+                t={descC}
             />
 
             <EditorName
