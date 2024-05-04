@@ -68,9 +68,8 @@ function FormElement() {
 
     async function post() {
         setSend('Sending...')
-        let tiON = true
-        if (titleON != 'on') { tiON = false }
-        console.log(tiON)
+
+        
 
         // const { data, error } = await supabase
         //     .from('options')

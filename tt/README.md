@@ -13,6 +13,8 @@ npx shadcn-ui@latest add form
 npx shadcn-ui@latest add textarea
 npx shadcn-ui@latest add label
 npx shadcn-ui@latest add slider
+
+npm i @vercel/speed-insights
 ```
 
 
