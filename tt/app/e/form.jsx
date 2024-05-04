@@ -69,16 +69,59 @@ function FormElement() {
     async function post() {
         setSend('Sending...')
 
-        
+        const jason = {
+            "title": {
+                "on": titleON,
+                "content": titleC,
+            },
+            "img": imgON,
+            "name": {
+                "on": nameON,
+                "title": nameT,
+                "desc": nameD
+            },
+            "age": {
+                "on": ageON,
+                "title": ageT,
+                "desc": ageD
+            },
+            "email": {
+                "on": mailON,
+                "title": mailT,
+                "desc": mailD
+            },
+            "gender": {
+                "on": genderON,
+                "title": genderT,
+                "desc": genderD
+            },
+            "city": {
+                "on": cityON,
+                "title": cityT,
+                "desc": cityD
+            },
+            "bio": {
+                "on": bioON,
+                "title": bioT,
+                "desc": bioD
+            },
+            "happy": {
+                "on": happyON,
+                "title": happyT,
+                "desc": happyD
+            }
+        }
 
-        // const { data, error } = await supabase
-        //     .from('options')
-        //     .update([{
-        //         json: ''
-        //     }])
-        //     .select()
+
+        const { data, error } = await supabase
+            .from('options')
+            .update({
+                json: jason
+            }).eq('id', 3)
     }
 
+
+    //il y a clairement moyen de faire un seul component pour l'Editor et de seulement varier les input. Mettre un input sur le nom et sur les données des options serait une bonne piste. ceci dit je n'ai pas trouvé de moyen efficace de 
     return (
         <form onSubmit={post} className="gap-[1svw] flex flex-col w-4/5">
 
