@@ -15,7 +15,7 @@ import { EditorGender } from '/components/editorGender'
 import { EditorCity } from '/components/editorCity'
 import { EditorBio } from '/components/editorBio'
 import { EditorHappy } from '/components/editorHappy'
-import { EditorDesc } from '/components/EditorDescr'
+import { EditorDesc } from '/components/editorDescr'
 
 
 function FormElement() {
