@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className + " flex w-[100svw] overflow-x-hidden"}>
-        <div className="hidden md:block w-[30svw] border-r-[#a1505b] border-r" id="leftDiv"></div>
+        <div className="hidden md:flex w-[30svw] border-r-[#a1505b] border-r flex-col gap-[2svw] items-center pt-[5svw]" id="leftDiv">
+          <Link className="text-[#a1505b] text-[1.5svw] hover:text-[#F9E1E4]" href='/'>Form</Link>
+          <Link className="text-[#a1505b] text-[1.5svw] hover:text-[#F9E1E4]" href='/e'>Editor</Link>
+        </div>
 
         <div className="m-[1svh] w-[100svw] md:w-[60svw] p-[1svw] relative flex justify-center items-center flex-col" id="middleDiv">{children}</div>
 
