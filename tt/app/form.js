@@ -164,14 +164,14 @@ function FormElement() {
 
     return (
         <>
-            <h1 className={'text-[4svw] ' + titleON}>{titleC}</h1>
+            <h1 className={'text-[4svw] text-[#a1505b] underline decoration-[#F9E1E4] decoration-solid decoration-[0.1svw] ' + titleON}>{titleC}</h1>
             <img
                 src="/img/header.jpeg"
                 alt="A picture of a man coding"
                 className={'z-[-1]  w-4/5 m-[5%] ' + imgON}
             />
             <p
-                className={"w-4/5 mb-[2svw] " + descON}>
+                className={"w-4/5 mb-[2svw] text-[#a1505b] " + descON}>
                 {descC}
             </p>
             <form onSubmit={post} className="gap-[1svw] flex flex-col w-4/5">
@@ -211,12 +211,12 @@ function FormElement() {
 
 
                 <Label>{genderT}</Label>
-                <fieldset className={"border-[lightgray] border-solid border-[.1svw] rounded-[1svw] flex-col p-[1svw] items-center " + genderON}>
+                <fieldset className={"border-[#a1505b] border-solid border-[.1svw] rounded-[1svw] flex-col p-[1svw] items-center " + genderON}>
                     <legend className="justify-self-center">{genderD}</legend>
 
-                    <div className="w-[20svw] h-[5svh] flex align justify-center items-center">
+                    <div className="w-[20svw] h-[5svh] flex align justify-center items-center border-[#a1505b] ">
                         <Input
-                            className='w-[5svw]'
+                            className='w-[5svw] border-[#a1505b] accent-[#a1505b]'
                             type="radio"
                             name="radio"
                             value="man"
@@ -230,7 +230,7 @@ function FormElement() {
 
                     <div className="w-[20svw] h-[5svh] flex align justify-center items-center">
                         <Input
-                            className='w-[5svw]'
+                            className='w-[5svw] border-[#a1505b] accent-[#a1505b]'
                             type="radio"
                             name="radio"
                             value="woman"
@@ -244,7 +244,7 @@ function FormElement() {
 
                     <div className="w-[20svw] h-[5svh] flex align justify-center items-center">
                         <Input
-                            className='w-[5svw]'
+                            className='w-[5svw] border-[#a1505b] accent-[#a1505b]'
                             type="radio"
                             name="radio"
                             value="other"
@@ -294,7 +294,10 @@ function FormElement() {
                 />
 
 
-                <Label htmlFor='happyness'>{happyT + '  ' + happyD}</Label>
+                <div className="flex items-center gap-2.5">
+                    <Label htmlFor='happyness'>{happyT}</Label>
+                    <p className="text-[#a1505b] text-[12px]">{happyD}</p>
+                </div>
                 <Slider
                     name='happy'
                     id='happyness'

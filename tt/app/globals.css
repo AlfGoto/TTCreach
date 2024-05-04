@@ -4,33 +4,37 @@
 
 @layer base {
     :root {
+        --gradient: #F9E1E4;
+
         --background: 0 0% 100%;
         --foreground: 224 71.4% 4.1%;
 
-        --card: 0 0% 100%;
-        --card-foreground: 224 71.4% 4.1%;
+        --card: -8 51.6% 12.09%;
+        --card-foreground: -8 6.7% 99.65%;
 
-        --popover: 0 0% 100%;
-        --popover-foreground: 224 71.4% 4.1%;
+        --popover: -8 51.6% 12.09%;
+        --popover-foreground: -8 6.7% 99.65%;
+        --primary: -8 67% 93%;
+        --primary-foreground: -8 6.7% 9.3%;
 
-        --primary: 220.9 39.3% 11%;
-        --primary-foreground: 210 20% 98%;
+        --muted: -8 33.5% 47.43%;
+        --muted-foreground: -8 6.7% 59.3%;
 
-        --secondary: 220 14.3% 95.9%;
-        --secondary-foreground: 220.9 39.3% 11%;
+        --secondary: -8 33.5% 47.43%;
+        --secondary-foreground: -8 6.7% 99.65%;
 
         --muted: 220 14.3% 95.9%;
         --muted-foreground: 220 8.9% 46.1%;
 
-        --accent: 220 14.3% 95.9%;
-        --accent-foreground: 220.9 39.3% 11%;
+        --accent: -8 33.5% 47.43%;
+        --accent-foreground: -8 6.7% 99.65%;
 
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: -8 6.7% 99.65%;
 
-        --border: 220 13% 91%;
-        --input: 220 13% 91%;
-        --ring: 224 71.4% 4.1%;
+        --border: -8 33.5% 47.43%;
+        --input: -8 33.5% 47.43%;
+        --ring: -8 67% 93%;
 
         --radius: 0.5rem;
     }
@@ -70,7 +74,12 @@
     * {
         @apply border-border;
     }
+
     body {
         @apply bg-background text-foreground;
     }
+}
+
+input[type="checkbox"] {
+    accent-color: #F9E1E4;
 }

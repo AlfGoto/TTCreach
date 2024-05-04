@@ -23,11 +23,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className + " flex w-[100svw] overflow-x-hidden"}>
-        <div className="hidden md:block w-[30svw] border-r-[lightgray] border-r" id="leftDiv"></div>
+        <div className="hidden md:block w-[30svw] border-r-[#a1505b] border-r" id="leftDiv"></div>
 
         <div className="m-[1svh] w-[100svw] md:w-[60svw] p-[1svw] relative flex justify-center items-center flex-col" id="middleDiv">{children}</div>
 
-        <div className="hidden md:block w-[30svw] border-l-[lightgray] border-l" id="rightDiv"></div>
+        <div className="hidden md:block w-[30svw] border-l-[#a1505b] border-l" id="rightDiv"></div>
         </body>
     </html>
   );

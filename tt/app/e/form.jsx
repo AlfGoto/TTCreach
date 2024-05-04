@@ -15,7 +15,7 @@ import { EditorGender } from '/components/editorGender'
 import { EditorCity } from '/components/editorCity'
 import { EditorBio } from '/components/editorBio'
 import { EditorHappy } from '/components/editorHappy'
-import { EditorDesc } from '/components/EditorDesc'
+import { EditorDesc } from '/components/EditorDescr'
 
 
 function FormElement() {
@@ -149,7 +149,7 @@ function FormElement() {
                 changeOn={descON => setDescON(descON)}
                 on={descON}
                 changeC={descC => setDescC(descC)}
-                t={descC}
+                c={descC}
             />
 
             <EditorName

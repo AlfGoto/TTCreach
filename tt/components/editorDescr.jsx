@@ -21,7 +21,7 @@ export function EditorDesc(props) {
     }, [])
 
     return (
-        <div className="border-[0.1svw] border-solid border-[lightgray] p-[1svw] flex flex-col gap-[0.5svw]">
+        <section className="border-[0.1svw] border-solid border-[#a1505b] p-[1svw] flex flex-col gap-[0.5svw]">
             <p>Description</p>
             <div className="flex">
                 <Input
@@ -32,10 +32,10 @@ export function EditorDesc(props) {
                 />
             </div>
             <Textarea 
-                value={props.d}
+                value={props.c}
                 onChange={e => { props.changeC(e.target.value) }}
             />
-        </div>
+        </section>
     )
 
 }

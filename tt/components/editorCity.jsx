@@ -22,7 +22,7 @@ export function EditorCity(props) {
     }, [])
 
     return (
-        <div className="border-[0.1svw] border-solid border-[lightgray] p-[1svw] flex flex-col gap-[0.5svw]">
+        <div className="border-[0.1svw] border-solid border-[#a1505b] p-[1svw] flex flex-col gap-[0.5svw]">
             <p>City</p>
             <div className="flex">
                 <Input

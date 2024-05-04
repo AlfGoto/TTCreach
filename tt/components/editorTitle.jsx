@@ -20,7 +20,7 @@ export function EditorTitle(props) {
     }, [])
 
     return (
-        <div className="border-[0.1svw] border-solid border-[lightgray] p-[1svw]">
+        <div className="border-[0.1svw] border-solid border-[#a1505b] p-[1svw]">
             <p>Title</p>
             <div className="flex">
                 <Input
